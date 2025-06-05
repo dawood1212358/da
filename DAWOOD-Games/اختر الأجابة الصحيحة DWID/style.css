@@ -1,0 +1,319 @@
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  background: radial-gradient(ellipse at center, #0a0a1a 0%, #000 100%);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* شاشة البداية */
+.centered {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #000011 0%, #000 100%);
+  z-index: 100;
+  padding: 20px;
+  text-align: center;
+  color: #00bfff;
+}
+
+.main-card-game {
+  background: rgba(0, 0, 30, 0.88);
+  border-radius: 30px;
+  padding: 50px 60px;
+  box-shadow: 0 0 40px #00bfff88;
+  max-width: 420px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #00bfff, 0 0 40px #fff1;
+  letter-spacing: 6px;
+  color: #00bfff;
+}
+
+.game-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #66ccff;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.game-instruction {
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+  color: #99ddff;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.start-btn {
+  font-size: 1.6rem;
+  padding: 18px 60px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #00bfff, #005f99);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px #00bfffcc;
+  transition: background 0.3s, box-shadow 0.3s;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.start-btn:hover {
+  background: linear-gradient(90deg, #005f99, #00bfff);
+  box-shadow: 0 0 30px #00d4ffcc;
+}
+
+/* شاشة اللعب */
+.game-layout {
+  position: fixed;
+  top:0; left:0; right:0; bottom:0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw; height: 100vh;
+  background: linear-gradient(120deg, #1e202a 60%, #243b55 100%);
+  z-index: 200;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 55px 0 55px;
+}
+.logo-title {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #1e90ff;
+  letter-spacing: 2px;
+}
+#pauseBtn {
+  font-size: 2em;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #0006;
+  transition: background 0.2s;
+}
+#pauseBtn:hover {
+  background: #1e90ff;
+  color: #fff;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0 60px 0 60px;
+  gap: 40px;
+}
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  min-width: 180px;
+}
+.score-card {
+  background: #1e90ff33;
+  border-radius: 16px;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  box-shadow: 0 2px 24px #0004;
+}
+.score-card .team-name {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+.score-card .team-score {
+  font-size: 2em;
+  background: #1e90ff;
+  border-radius: 12px;
+  padding: 5px 18px;
+  min-width: 50px;
+}
+.question-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تكبير السؤال والإجابات */
+.question {
+  font-size: 2.3em;
+  margin: 50px 0 40px 0;
+  background: rgba(255, 255, 255, 0.13);
+  border-radius: 22px;
+  padding: 38px 55px;
+  box-shadow: 0 4px 20px #1e90ff44;
+  min-width: 420px;
+  max-width: 900px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  user-select: none;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 38px;
+  margin: 35px 0 35px 0;
+  justify-items: center;
+}
+
+.optionBtn {
+  background: #222b;
+  color: #fff;
+  border: 3px solid #1e90ff;
+  border-radius: 22px;
+  font-size: 1.7em;
+  padding: 32px 0;
+  min-width: 260px;
+  min-height: 90px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: 0 3px 15px #1e90ff33;
+  font-weight: 700;
+  user-select: none;
+}
+
+.optionBtn:hover:enabled {
+  background: #1e90ff;
+  color: #fff;
+  border: 3px solid #fff;
+}
+
+.team-turn {
+  font-size: 1.6em;
+  margin: 35px 0 0 0;
+  color: #1e90ff;
+  font-weight: 900;
+  letter-spacing: 3px;
+  user-select: none;
+}
+
+.timer-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  margin-left: 40px;
+}
+#timerCircle {
+  display: block;
+}
+#timerArc {
+  transition: stroke-dashoffset 1s linear;
+}
+
+.centered .winner-card {
+  background: rgba(30, 32, 40, 0.98);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 #1e90ff44;
+  padding: 40px 45px 30px 45px;
+  min-width: 320px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#winnerScreen h1 {
+  font-size: 2.4em;
+  color: #1e90ff;
+  margin-bottom: 18px;
+}
+#winnerScreen p {
+  font-size: 1.3em;
+  color: #fff;
+}
+
+#startVideo,
+#endVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 5000;
+  background: #000;
+}
+#unmuteBtn {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6000;
+  font-size: 1.5em;
+  padding: 15px 35px;
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 4px 20px #0008;
+}
+
+@media (max-width: 900px) {
+  .main-card-game,
+  .centered .winner-card {
+    min-width: 90vw;
+    padding: 25px 5vw 25px 5vw;
+  }
+  .main-content {
+    flex-direction: column;
+    padding: 0 10px;
+    gap: 10px;
+  }
+  .timer-area {
+    margin-left: 0;
+    margin-bottom: 30px;
+  }
+  .scoreboard {
+    flex-direction: row;
+    gap: 10px;
+    min-width: unset;
+    justify-content: center;
+  }
+  .question-area {
+    min-width: unset;
+    max-width: 100vw;
+  }
+  .question {
+    font-size: 1.3em;
+    min-width: unset;
+    padding: 18px 10px;
+  }
+  .optionBtn {
+    font-size: 1.1em;
+    min-width: 120px;
+    min-height: 50px;
+    padding: 12px 0;
+  }
+}

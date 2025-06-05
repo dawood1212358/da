@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>dwid - لعبة الكواكب والنجوم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- فيديو البداية -->
+  <video id="startVideo" src="videos/start.mp4" autoplay muted playsinline></video>
+  <button id="unmuteBtn">تشغيل البداية مع الصوت</button>
+
+  <!-- شاشة البداية -->
+  <div id="mainScreen" class="centered" style="display:none;">
+    <div class="main-card-game">
+      <h1 class="game-title">dwid</h1>
+      <h3 class="game-subtitle">لعبة الكواكب والنجوم</h3>
+      <p class="game-instruction">اختبر معلوماتك وتحدى أصدقائك!<br>أجب بسرعة، كل إجابة صحيحة = 10 نقاط.</p>
+      <button id="startBtn" class="start-btn">ابدأ اللعب</button>
+    </div>
+  </div>
+
+  <!-- شاشة اللعب -->
+  <div id="gameScreen" class="game-layout" style="display:none;">
+    <div class="header">
+      <div class="logo-title">
+        <span>dwid</span>
+      </div>
+      <button id="pauseBtn" title="إيقاف مؤقت">⏸️</button>
+    </div>
+    <div class="main-content">
+      <div class="scoreboard">
+        <div class="score-card team1">
+          <span class="team-name">الكواكب</span>
+          <span class="team-score" id="score1g">0</span>
+        </div>
+        <div class="score-card team2">
+          <span class="team-name">النجوم</span>
+          <span class="team-score" id="score2g">0</span>
+        </div>
+      </div>
+      <div class="question-area">
+        <div id="questionText" class="question"></div>
+        <div class="options">
+          <button class="optionBtn" id="opt0"></button>
+          <button class="optionBtn" id="opt1"></button>
+          <button class="optionBtn" id="opt2"></button>
+          <button class="optionBtn" id="opt3"></button>
+        </div>
+        <div class="team-turn">السؤال موجه إلى: <span id="currentTeam"></span></div>
+      </div>
+      <div class="timer-area">
+        <svg id="timerCircle" width="120" height="120">
+          <circle cx="60" cy="60" r="54" stroke="#444" stroke-width="10" fill="none"/>
+          <circle id="timerArc" cx="60" cy="60" r="54" stroke="#1e90ff" stroke-width="10" fill="none" 
+                  stroke-linecap="round" transform="rotate(-90 60 60)" />
+          <text id="timerText" x="60" y="75" text-anchor="middle" font-size="2.3em" fill="#fff">30</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- شاشة الفائز -->
+  <div id="winnerScreen" class="centered" style="display:none;">
+    <div class="winner-card">
+      <h1>مبروك <span id="winnerTeam"></span>!</h1>
+      <p>حظ أوفر لـ <span id="loserTeam"></span></p>
+    </div>
+  </div>
+
+  <!-- فيديو النهاية -->
+  <video id="endVideo" src="videos/end.mp4" style="display:none;" playsinline></video>
+
+  <script src="script.js"></script>
+</body>
+</html>

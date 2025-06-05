@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة DAWOOD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="startScreen">
+    <h1>🎮 أهلاً بك في لعبة DAWOOD!</h1>
+    <p>الكواكب × النجوم</p>
+    <button onclick="startGame()">ابدأ اللعبة</button>
+  </div>
+
+  <div id="gameScreen" style="display:none">
+    <div class="container">
+      <h1>لعبة DAWOOD - الكواكب × النجوم</h1>
+      <div id="questionBox"><p id="question">جارٍ تحميل السؤال...</p></div>
+      <div class="buttons">
+        <button onclick="submitAnswer(true)">✅ صح</button>
+        <button onclick="submitAnswer(false)">❌ خطأ</button>
+      </div>
+      <p id="teamName">الدور على: <span id="currentTeam">الكواكب</span></p>
+      <div id="feedback"></div>
+      <div class="bottomBar">
+        <div class="timer">⏱ <span id="timer">10</span> ثانية
+          <button onclick="togglePause()">⏸️ إيقاف مؤقت</button>
+        </div>
+        <div class="score">
+          النقاط: 🌍 الكواكب <span id="score1">0</span> | 🌟 النجوم <span id="score2">0</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="endScreen" style="display:none">
+    <h1 id="winnerMessage">🎉 الفريق الفائز هو: الكواكب!</h1>
+    <p id="loserMessage">حظًا أوفر للفريق الآخر 👏</p>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
